@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .item {
+            /* display: inline-block; */
+            background-color: yellow;
+            border: 1px solid black;
+        }
+        .card {
+            border: 1px solid black;
+            padding: 0.5em;
+            border-radius: 5px;
+            width: 25px;
+            height: 40px;
+            text-align: center;
+        }
+        .make-item-grow-1 > .item {
+            flex-grow: 1;
+        }
+        .width-33 {
+            width: 33%;
+            display: inline-block;
+            background-color: yellow;
+            /* border: 1px solid black; */
+        }
+    </style>
+</head>
+<body>
+    <!-- flex container -->
+    <div class="container">
+        <!-- flex item * 3 -->
+        <!-- flex item: order = 0; -->
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item" style="order: -1;">Item 3</div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <!-- flex item: flex-grow = 0; -->
+        <div class="item">Item 1</div>
+        <div class="item" style="flex-grow: 1;">Item 2</div>
+        <div class="item" style="flex-grow: 2;">Item 3</div>
+        <div class="item">Item 4</div>
+    </div>
+
+    <hr>
+
+    <div class="container make-item-grow-1">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <hr>
+
+    <div class="width-33">Item 33%</div><div class="width-33">Item 33%</div><div class="width-33">Item 33%</div>
+
+    <hr>
+
+    <!--
+        align-items = flex-wrap: nowrap;
+        align-content = flex-wrap: wrap;
+    -->
+
+    <div class="container" style="flex-wrap: wrap; justify-content: space-around;">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div class="card">3</div>
+        <div class="card">4</div>
+        <div class="card">5</div>
+        <div class="card">6</div>
+        <div class="card">7</div>
+        <div class="card">8</div>
+    </div>
+
+    <hr>
+
+    <!--
+        justify-content = แกนหลัก (X)
+        align-items = แกนรอง (Y)
+    -->
+
+    <div style="display: flex; height: 200px; background-color: lightgray; align-items: stretch;">
+        <div style="background-color: yellow; padding: 10px;">Item</div>
+        <div style="background-color: yellow; padding: 10px; align-self: center;">Item</div>
+        <div style="background-color: yellow; padding: 10px;">Item</div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <div class="container" style="flex-direction: column;">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+</body>
+</html>
